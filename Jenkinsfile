@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	tools {
-		dotnet 'Dotnet_10'
+		dotnetsdk 'Dotnet_10'
 	}
 	stages {
 		stage('Checkout') {
