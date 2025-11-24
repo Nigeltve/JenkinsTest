@@ -12,15 +12,15 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building the project...'
-				dotnet build
+				sh 'dotnet restore'
+				sh 'dotnet build --no-restore'
 			}
 		}
 
 		stage('Test') {
-
 			steps {
 				echo 'Running tests...'
-				dotnet test
+				sh 'dotnet test --no-restore'
 			}
 		}
 	}
