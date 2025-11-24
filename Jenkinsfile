@@ -1,5 +1,9 @@
 pipeline {
-	agent any
+	agent {
+		tools {
+			dotnet 'DOTNET_SDK_10'
+		}
+	}
 
 	stages {
 		stage('Checkout') {
@@ -12,18 +16,14 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building the project...'
-				withDotNet('DOTNET_SDK') {
-					sh 'dotnet build'
-				}
+				sh 'dotnet build'
 			}
 		}
 
 		stage('Test') {
 			steps {
 				echo 'Running tests...'
-				withDotNet('DOTNET_SDK') {
-					sh 'dotnet test'
-				}
+				sh 'dotnet test'
 			}
 		}
 	}
