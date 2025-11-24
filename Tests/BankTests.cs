@@ -1,4 +1,4 @@
-using JenkinsTest;
+using Core;
 using FluentAssertions;
 
 namespace Tests;

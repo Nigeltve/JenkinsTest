@@ -1,4 +1,4 @@
-namespace JenkinsTest;
+namespace Core;
 
 public class User(string name, string email)
 {

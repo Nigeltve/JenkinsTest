@@ -1,6 +1,7 @@
+using Core;
 using FluentAssertions;
 
-namespace JenkinsTest.Tests;
+namespace Tests;
 
 public class AccountTests
 {
