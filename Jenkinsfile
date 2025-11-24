@@ -5,8 +5,7 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				echo 'Checking out code from repository...'
-				git branch: 'main',
-				url: 'https://github.com/Nigeltve/JenkinsTest.git'
+				checkout scm
 			}
 		}
 
