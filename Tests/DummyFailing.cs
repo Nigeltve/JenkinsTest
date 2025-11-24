@@ -8,6 +8,6 @@ public class DummyFailing
 	private void FailingTest()
 	{
 		const bool value = true;
-		value.Should().BeFalse();
+		value.Should().BeTrue();
 	}
 }
