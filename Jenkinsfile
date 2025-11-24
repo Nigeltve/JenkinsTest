@@ -1,6 +1,8 @@
 pipeline {
 	agent any
-
+	tools {
+		dotnet 'Dotnet_10'
+	}
 	stages {
 		stage('Checkout') {
 			steps {
@@ -12,6 +14,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building the project...'
+				sh 'dotnet --version'
 			}
 		}
 
