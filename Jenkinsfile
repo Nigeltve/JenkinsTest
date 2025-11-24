@@ -1,5 +1,6 @@
 pipeline {
 	agent {
+		any
 		tools {
 			dotnet 'DOTNET_SDK_10'
 		}
