@@ -12,6 +12,7 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				echo 'Checking out code from repository...'
+				sh 'dotnet --version'
 				checkout scm
 			}
 		}
@@ -19,13 +20,15 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building the project...'
-				sh 'dotnet --version'
+				sh 'dotnet restore'
+				sh 'dotnet build --no-restore'
 			}
 		}
 
 		stage('Test') {
 			steps {
 				echo 'Running tests...'
+				sh 'dotnet test'
 			}
 		}
 	}
