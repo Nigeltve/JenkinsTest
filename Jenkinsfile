@@ -12,18 +12,14 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building the project...'
-				withDotNet('DOTNET_SDK') {
-					sh 'dotnet build'
-				}
+				sh 'dotnet build'
 			}
 		}
 
 		stage('Test') {
 			steps {
 				echo 'Running tests...'
-				withDotNet('DOTNET_SDK') {
-					sh 'dotnet test'
-				}
+				sh 'dotnet test'
 			}
 		}
 	}
