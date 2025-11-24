@@ -12,29 +12,20 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building the project...'
+				dotnet build
 			}
 		}
 
 		stage('Test') {
+
 			steps {
 				echo 'Running tests...'
-			}
-		}
-
-		stage('Deploy') {
-			steps {
-				echo 'Deploying application...'
+				dotnet test
 			}
 		}
 	}
 
 	post {
-		success {
-			echo 'Build completed successfully!'
-		}
-		failure {
-			echo 'Build failed!'
-		}
 		always {
 			echo 'Cleaning up workspace...'
 			cleanWs()
